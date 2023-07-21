@@ -3,6 +3,8 @@ var generateBtn = document.querySelector("#generate");
 
 var passwordLengthPrompt;
 var uppercasePrompt;
+var lowercasePrompt;
+var numericPrompt;
 
 // Write password to the #password input
 function writePassword() {
@@ -14,7 +16,9 @@ function writePassword() {
 }
 
 var lengthPrompt = "Please type a number between 8 and 128 to determine the length of the password.";
-var upperPrompt= "Would you like to use Uppercase letters in your password? (Type yes or no)";
+var upperPrompt = "Would you like to use Uppercase letters in your password? (Type yes or no)";
+var lowerPrompt = "Would you like to use Lowercase letters in your password? (Type yes or no)";
+var numberPrompt = "Would you like to use Numbers in your password? (Type yes or no)";
 
 function criteriaPrompt(criteria) {
   return prompt (criteria);
@@ -34,6 +38,7 @@ function length () {
   }
 }
 
+// Created a function to determine input for determining whether or not to use Uppercase 
 function uppercase () {
   let uppercasePrompt = criteriaPrompt (upperPrompt);
   if (uppercasePrompt == "yes" || uppercasePrompt == "Yes") {
@@ -45,11 +50,33 @@ function uppercase () {
   }
 }
 
-function generatePassword () {
-  var x = length ();
-  if (x >= 8 && x <= 128) {
-    uppercase ();
+function lowercase () {
+  let lowercasePrompt = criteriaPrompt (lowerPrompt);
+  if (lowercasePrompt == "yes" || lowercasePrompt == "Yes") {
+    return lowercasePrompt;
+  } else if (lowercasePrompt == "no" || lowercasePrompt == "No") {
+    return lowercasePrompt;
+  } else {
+    lowercase ();
   }
+}
+
+function numeric () {
+  let numericPrompt = criteriaPrompt (numberPrompt);
+  if (numericPrompt == "yes" || numericPrompt == "Yes") {
+    return numericPrompt;
+  } else if (numericPrompt == "no" || numericPrompt == "No") {
+    return numericPrompt;
+  } else {
+    numeric ();
+  }
+}
+
+function generatePassword () {
+  var a = length ();
+  var b = uppercase ();
+  var c = lowercase ();
+  var d = numeric ();
   return;
 }
 
