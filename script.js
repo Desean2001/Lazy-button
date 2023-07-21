@@ -86,9 +86,15 @@ function generatePassword () {
   var b = uppercase ();
   var c = lowercase ();
   var d = numeric ();
+  // In order for at least one of the options to be selected i created an if statement to loop it if none were chosen.
   if (b == false && c == false && d == false) {
     prompt ("At least one of Uppercase, Lowercase, or Numbers must be selected.");
     generatePassword ();
+  } else {
+    var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    var availableNumbers = "0123456789";
+    
   }
   return;
 }

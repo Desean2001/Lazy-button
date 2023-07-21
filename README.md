@@ -43,3 +43,9 @@ If the user responds outside of the bounds required for the prompt, the prompt r
 If the user answers no to all questions, an alert is displayed saying that they need to say yes to at least one of the prompts, and then goes back to the beggining. 
 
 The password is then randomly generated based off of the responses recorded in the prompts and it is displayed on the screen where the placeholder used to be.
+
+
+Link to active page:
+https://desean2001.github.io/Lazy-button/
+
+Screenshot for page is in Assets under image.png.
