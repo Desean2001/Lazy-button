@@ -42,41 +42,54 @@ function length () {
 function uppercase () {
   let uppercasePrompt = criteriaPrompt (upperPrompt);
   if (uppercasePrompt == "yes" || uppercasePrompt == "Yes") {
+    uppercasePrompt = true;
     return uppercasePrompt;
   } else if (uppercasePrompt == "no" || uppercasePrompt == "No") {
+    uppercasePrompt = false;
     return uppercasePrompt;
   } else {
     uppercase ();
   }
 }
 
+// Created a function to determine if the user would like lowercase letters in the password.
 function lowercase () {
   let lowercasePrompt = criteriaPrompt (lowerPrompt);
   if (lowercasePrompt == "yes" || lowercasePrompt == "Yes") {
+    lowercasePrompt = true;
     return lowercasePrompt;
   } else if (lowercasePrompt == "no" || lowercasePrompt == "No") {
+    lowercasePrompt = false;
     return lowercasePrompt;
   } else {
     lowercase ();
   }
 }
 
+// Created a function to determine if the user would like numbers numbers in the password.
 function numeric () {
   let numericPrompt = criteriaPrompt (numberPrompt);
   if (numericPrompt == "yes" || numericPrompt == "Yes") {
+    numericPrompt = true;
     return numericPrompt;
   } else if (numericPrompt == "no" || numericPrompt == "No") {
+    numericPrompt = false;
     return numericPrompt;
   } else {
     numeric ();
   }
 }
 
+// 
 function generatePassword () {
   var a = length ();
   var b = uppercase ();
   var c = lowercase ();
   var d = numeric ();
+  if (b == false && c == false && d == false) {
+    prompt ("At least one of Uppercase, Lowercase, or Numbers must be selected.");
+    generatePassword ();
+  }
   return;
 }
 
